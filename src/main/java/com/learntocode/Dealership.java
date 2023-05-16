@@ -56,11 +56,11 @@ public class Dealership {
         public void setPhone(String phone) {
             this.phone = phone;
         }
-        private void addVehicle(Vehicle vehicle) {
+        public void addVehicle(Vehicle vehicle) {
         inventory.add(vehicle);
         }
 
-        private void removeVehicle(Vehicle vehicle) {
+        public void removeVehicle(Vehicle vehicle) {
 
         }
 
