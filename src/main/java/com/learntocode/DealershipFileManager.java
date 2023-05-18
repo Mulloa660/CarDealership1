@@ -2,68 +2,69 @@ package com.learntocode;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.List;
 
 public class DealershipFileManager {
 
-    private static final String file = "CarDealership.csv";
+    public Dealership getDealership() {
+        Dealership dealership = null;
+        ArrayList<Vehicle> vehicles = new ArrayList<>();
 
-    public static void main(String[] args) {
-
-    }
-
-    private Dealership getDealership() {
-        return null;
-    }
-
-    private void saveDealer(Dealership dealership) {
-
-    }
-
-    BufferedReader br;
-
-    {
-        try {
-            br = new BufferedReader(new FileReader(file));
-            String line = "";
+        try (BufferedReader br = new BufferedReader(new FileReader("dealership.csv"))) {
+            String line;
             int lineNumber = 0;
             while ((line = br.readLine()) != null) {
-                String[] parts = line.split("\\|");
-                Dealership dealership = null;
-                if (lineNumber == 0) {
-                    String name = parts[0];
-                    String address = parts[1];
-                    String phone = parts[2];
+                String[] fields = line.split("\\|");
+                if (lineNumber == 0) { // dealership info
+                    String name = fields[0];
+                    String address = fields[1];
+                    String phone = fields[2];
                     dealership = new Dealership(name, address, phone);
-                } else {
-                    int vin = Integer.parseInt(parts[0]);
-                    int year = Integer.parseInt(parts[1]);
-                    String make = parts[2];
-                    String model = parts[3];
-                    String vehicleType = parts[4];
-                    String color = parts[5];
-                    int odometer = Integer.parseInt(parts[6]);
-                    double price = Double.parseDouble(parts[7]);
+                } else { // vehicle info
+                    int vin = Integer.parseInt(fields[0]);
+                    int year = Integer.parseInt(fields[1]);
+                    String make = fields[2];
+                    String model = fields[3];
+                    String vehicleType = fields[4];
+                    String color = fields[5];
+                    int odometer = Integer.parseInt(fields[6]);
+                    double price = Double.parseDouble(fields[7]);
                     Vehicle vehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
-                    dealership.addVehicle(vehicle);
-
+                    vehicles.add(vehicle);
                 }
-
+                lineNumber++;
             }
-        } catch (Exception e) {
-            System.out.println("An error has occurred!");
-        }
-
-        try {
-            BufferedWriter bw = new BufferedWriter(new FileWriter(file, true));
-            bw.write(file);
-            bw.newLine();
-            bw.close();
-
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
 
+        if (dealership != null) {
+            for (Vehicle vehicle : vehicles) {
+                dealership.addVehicle(vehicle);
+            }
+        }
+
+        return dealership;
+    }
+
+    public void saveDealership(Dealership dealership) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("dealership.csv"))) {
+            // Write dealership information
+            bw.write(dealership.getName() + "|" + dealership.getAddress() + "|" + dealership.getPhone());
+            bw.newLine();
+
+            // Write vehicle inventory
+            for (Vehicle vehicle : dealership.getAllVehicles()) {
+                bw.write(vehicle.getVin() + "|" + vehicle.getYear() + "|" + vehicle.getMake() + "|" + vehicle.getModel()
+                        + "|" + vehicle.getVehicleType() + "|" + vehicle.getColor() + "|" + vehicle.getOdometer()
+                        + "|" + vehicle.getPrice());
+                bw.newLine();
+            }
+
+            System.out.println("Dealership saved successfully to dealership.csv.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }
+
