@@ -5,18 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a729c88-2980-4d75-a3fc-9b4622e987fc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yearup/dealership/Contract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yearup/dealership/LeaseContract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yearup/dealership/SalesContract.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yearup/dealership/ContractDataManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dealership.csv" beforeDir="false" afterPath="$PROJECT_DIR$/dealership.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learntocode/CarDealership.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yearup/dealership/CarDealership.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learntocode/Dealership.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yearup/dealership/Dealership.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learntocode/DealershipFileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yearup/dealership/DealershipFileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learntocode/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yearup/dealership/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learntocode/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yearup/dealership/UserInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learntocode/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yearup/dealership/Vehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yearup/dealership/LeaseContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yearup/dealership/LeaseContract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yearup/dealership/SalesContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yearup/dealership/SalesContract.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
